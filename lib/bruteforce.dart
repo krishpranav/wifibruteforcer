@@ -1,7 +1,7 @@
 // imports
 import 'package:flutter/material.dart';
-import 'package:wifibruteforcer/password.dart';
 import 'package:wifi_iot/wifi_iot.dart';
+import 'package:wifibruteforce/password.dart';
 
 class Attack extends StatefulWidget {
   final WifiNetwork wifiNetwork;
@@ -49,5 +49,42 @@ class _AttackState extends State<Attack> {
         }
       }
     }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text("Attacking " + widget.wifiNetwork.ssid),
+      ),
+      body: Column(
+        children: <Widget>[
+          SizedBox(
+            height: 15,
+          ),
+          Center(
+            child: SelectableText(
+              "Trying password : " + currentPass + "\n" + count.toString() + "/" + PASSWORDS.length.toString(),
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 35),
+            ),
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          if (success) Text("Password Found :) = " + currentPass),
+          done
+              ? RaisedButton(
+                  color: success ? Colors.green : Colors.red,
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text(result),
+                )
+              : SizedBox()
+        ],
+      ),
+    );
   }
 }
