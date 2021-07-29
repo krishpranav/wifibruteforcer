@@ -83,12 +83,12 @@ class _FlutterWifiIoTState extends State<FlutterWifiIoT> {
         }));
     htPrimaryWidgets.addAll({
       Container(
-        color: Colors.red[900],
+        color: Colors.black,
         height: 350,
         child: Center(
           child: Text(
             'Wifi BruteForce Tool',
-            style: TextStyle(color: Colors.black54, fontSize: 35),
+            style: TextStyle(color: Colors.white, fontSize: 35),
           ),
         ),
       ),
