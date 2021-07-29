@@ -1,7 +1,7 @@
 // imports
 import 'package:flutter/material.dart';
 import 'package:wifi_iot/wifi_iot.dart';
-import 'package:wifibruteforce/password.dart';
+import 'package:wifibruteforce/passwords/password.dart';
 
 class Attack extends StatefulWidget {
   final WifiNetwork wifiNetwork;
