@@ -16,10 +16,11 @@ class _FlutterWifiIoTState extends State<FlutterWifiIoT> {
   @override
   Widget build(BuildContext poContext) {
     return Scaffold(
+      // backgroundColor: Colors.black87,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        // title: Text("Attacking " + widget.wifiNetwork.ssid),
-        title: Text("Text"),
+        backgroundColor: Colors.black87,
+        title: Text("WifiBruteForcer"),
       ),
       body: Column(
         children: <Widget>[
@@ -35,9 +36,22 @@ class _FlutterWifiIoTState extends State<FlutterWifiIoT> {
             ),
           ),
           SizedBox(
-            height: 190,
+            height: 90,
           ),
-          Center(child: Text('Wifi BruteForcer app built by krisna pranav', style: TextStyle(fontSize: 10))),
+          Center(
+              child: ElevatedButton(
+            child: Text('Agree Our License And Start Using This Tool'),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Agreement()),
+              );
+            },
+          )),
+          SizedBox(
+            height: 200,
+          ),
+          Center(child: Text('Wifi BruteForcer app built by krisna pranav', style: TextStyle(fontSize: 15))),
         ],
       ),
     );
