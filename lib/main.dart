@@ -172,3 +172,10 @@ class _FlutterWifiIoTState extends State<FlutterWifiIoT> {
     );
   }
 }
+
+class PopupCommand {
+  String command;
+  String argument;
+
+  PopupCommand(this.command, this.argument);
+}
